@@ -27,11 +27,25 @@
 		data : {
 			token: "",
 			userinfo:{
-				username:"user",
-				email:"123584",
-				phone:"123584",
+				username:"user2",
+				email:"66666",
+				phone:"6666",
 				location:"123584"
-			}
+			},
+			userinfo2:{
+				id:"7",
+				username:"user2",
+				email:"66666",
+				phone:"6666",
+				location:"123584"
+			},
+			userinfo3:{
+				id:"1",
+				username:"user",
+				email:"000",
+				phone:"111",
+				location:"222"
+			},
 		},
 		methods : {
 			test(){
@@ -84,26 +98,18 @@
 				});
 			},
 			updateoneuserinfo(){
-				let url = "http://localhost:8881/auth/res/updateoneuserinfo";
-				let token = this.token
-				axios.get(url, {
-					params: {
-						access_token:token
-					}
-				}).then(function (response) {
+				let url = "http://localhost:8881/auth/res/updateoneuserinfo"+"?access_token="+this.token;
+				let data = this.userinfo3
+				axios.post(url, data).then(function (response) {
 					console.log(response);
 				}).catch(function (error) {
 					console.log(error);
 				});
 			},
 			deleteoneuserinfo(){
-				let url = "http://localhost:8881/auth/res/deleteoneuserinfo";
-				let token = this.token
-				axios.get(url, {
-					params: {
-						access_token:token
-					}
-				}).then(function (response) {
+				let url = "http://localhost:8881/auth/res/deleteoneuserinfo"+"?access_token="+this.token;
+				let data = this.userinfo2
+				axios.post(url, data).then(function (response) {
 					console.log(response);
 				}).catch(function (error) {
 					console.log(error);
