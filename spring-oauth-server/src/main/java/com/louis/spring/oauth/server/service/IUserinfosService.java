@@ -8,4 +8,6 @@ import java.util.List;
 public interface IUserinfosService extends IService<Userinfos> {
     List<Userinfos> getalluserinfo();
     String addoneuserinfo(Userinfos userinfos);
+    String updateoneuserinfo(Userinfos userinfos);
+    String deleteoneuserinfo(Userinfos userinfos);
 }
