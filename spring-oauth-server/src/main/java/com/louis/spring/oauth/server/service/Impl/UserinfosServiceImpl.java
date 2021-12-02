@@ -29,5 +29,18 @@ public class UserinfosServiceImpl extends ServiceImpl<UserinfosMapper, Userinfos
         return "success";
     }
 
+    @Override
+    public String updateoneuserinfo(Userinfos userinfos) {
+        userinfosMapper.updateById(userinfos);
+        return "对id="+userinfos.getId()+"进行更新操作了";
+    }
+
+    @Override
+    public String deleteoneuserinfo(Userinfos userinfos) {
+        userinfosMapper.deleteById(userinfos.getId());
+        System.out.println("对id="+userinfos.getId()+"进行删除操作了");
+        return "对id="+userinfos.getId()+"进行删除操作了";
+    }
+
 
 }
